@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+    <title>Homepage</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../../static/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+
+        <nav class="navbar" >
+        <span class="navbar-brand mb-0 h1"></span>
+
+         <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'homepage' %}">Home Page</a>
+            </li>
+             {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">{{ request.user.username }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Ratecompany:logout' %}">logout</a>
+                    </li>
+             {% else %}
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'Ratecompany:login' %}">Login</a>
+                </li>
+                 <li class="nav-item">
+                <a class="nav-link" href="{% url 'Ratecompany:register' %}">Sign Up</a>
+                </li>
+             {% endif %}
+
+             <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Company Name" aria-label="Search">
+                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+             </form>
+        </ul>
+        </nav>
+    </header>
+
+
+            <!-- Masthead -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 justify-content-center text-center" id="mainbody">
+        <div class="col-lg-10" id="rate">
+          <h1 class="text-uppercase font-weight-bold">RATE YOUR COMPANY</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-85 font-weight-light mb-3" id="slogan">Start from here. This is where your dreams begin!</p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'Ratecompany:rate' %}">Employee Sign In</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'Ratecompany:company_list' %}">Explore!</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

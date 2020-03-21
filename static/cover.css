@@ -1,0 +1,37 @@
+body {
+    height: 100%;
+    background-image: url('bg.jpg');
+      background-size: 100%;
+  }
+
+  .navbar{
+      background-color: transparent;
+  }
+
+  h1{
+      color: whitesmoke;
+      font-size: 400%;
+      position: center;
+  }
+
+  #slogan{
+      color: whitesmoke;
+      font-size: 130%;
+  }
+
+  .container{
+      margin-top: 200px!important;
+  }
+
+
+  .nav-item{
+      color: transparent;
+  }
+  .nav-link{
+      color: whitesmoke;
+  }
+
+  .btn{
+      color: whitesmoke;
+  }
+
